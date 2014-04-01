@@ -556,7 +556,7 @@ class UserPhotoUpdateTest(LocalMediaTestCase):
 
 class PlotUpdateTest(unittest.TestCase):
     def setUp(self):
-        User._system_user.save_base()
+        User.system_user().save_base()
 
         self.instance = make_instance()
         self.user = make_commander_user(self.instance)

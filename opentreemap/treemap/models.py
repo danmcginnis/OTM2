@@ -336,9 +336,9 @@ class User(Auditable, AbstractUniqueEmailUser):
 
     @classmethod
     def system_user(clazz):
-        if not User._system_user:
+        if not User.system_user():
             try:
-                User._system_user = User.objects.get(
+                User.system_user() = User.objects.get(
                     pk=settings.SYSTEM_USER_ID)
 
             except User.DoesNotExist:
@@ -346,7 +346,7 @@ class User(Auditable, AbstractUniqueEmailUser):
                                         'want to run '
                                         '`manage.py create_system_user`')
 
-        return User._system_user
+        return User.system_user()
 
     @property
     def created(self):

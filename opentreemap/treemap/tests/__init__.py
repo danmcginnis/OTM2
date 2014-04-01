@@ -265,9 +265,9 @@ def make_user_and_role(instance, username, rolename, permissions):
 
 
 def delete_all_app_users():
-    for app_user in User.objects.exclude(pk=User._system_user.pk):
+    for app_user in User.objects.exclude(pk=User.system_user().pk):
         InstanceUser.objects.filter(user_id=app_user.pk).delete()
-        app_user.delete_with_user(User._system_user)
+        app_user.delete_with_user(User.system_user())
 
 
 def make_instance(name=None, is_public=False, url_name=None, point=None):
@@ -312,7 +312,7 @@ def create_mock_system_user():
         system_user.set_password('password')
         system_user.save_base()
 
-    User._system_user = system_user
+    User.system_user() = system_user
 
 
 def make_request(params={}, user=None, method='GET', body=None, file=None):

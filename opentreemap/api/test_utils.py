@@ -111,4 +111,4 @@ def teardownTreemapEnv():
     for r in Species.objects.all():
         r.delete_with_user(commander)
 
-    commander.delete_with_user(User._system_user)
+    commander.delete_with_user(User.system_user())
