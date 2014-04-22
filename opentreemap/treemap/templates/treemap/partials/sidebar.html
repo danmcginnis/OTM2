@@ -38,7 +38,7 @@
   {% if nearby %}
   </ul>
   {% for plot in nearby %}
-  <li><a href="{% url 'map_feature_detail' instance_url_name=request.instance.url_name feature_id=plot.pk %}">{{ plot.pk }}</a></li>
+  <li><a href="{% url 'map_feature_detail' instance_url_name=request.instance.url_name feature_id=plot.pk tree_id=tree.pk %}">{{ value|unlocalize }}</a></li>
   {% endfor %}
   </ul>
   {% else %}
