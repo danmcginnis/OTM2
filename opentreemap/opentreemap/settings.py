@@ -258,11 +258,6 @@ ACCOUNT_ACTIVATION_DAYS = 7
 # if diffferent from DISPLAY_DEFAULTS
 #
 STORAGE_UNITS = {
-    'eco': {
-        'energy': {'units': 'kwh', 'digits': 0}
-    }
-}
-DISPLAY_DEFAULTS = {
     'plot': {
         'width':  {'units': 'in', 'digits': 1},
         'length': {'units': 'in', 'digits': 1},
@@ -273,10 +268,28 @@ DISPLAY_DEFAULTS = {
         'canopy_height': {'units': 'ft', 'digits': 1}
     },
     'eco': {
+        'energy': {'units': 'kwh', 'digits': 1},
         'stormwater': {'units': 'gal', 'digits': 1},
-        'co2':        {'units': 'lbs/year', 'digits': 1},
+        'co2':    {'units': 'lbs/year', 'digits': 1},
         'co2storage': {'units': 'lbs', 'digits': 1},
         'airquality': {'units': 'lbs/year', 'digits': 1}
+    }
+}
+DISPLAY_DEFAULTS = {
+    'plot': {
+        'width':  {'units': 'in', 'digits': 0},
+        'length': {'units': 'in', 'digits': 0},
+    },
+    'tree': {
+        'diameter':      {'units': 'in', 'digits': 0},
+        'height':        {'units': 'ft', 'digits': 0},
+        'canopy_height': {'units': 'ft', 'digits': 0}
+    },
+    'eco': {
+        'stormwater': {'units': 'gal', 'digits': 0},
+        'co2':        {'units': 'lbs/year', 'digits': 0},
+        'co2storage': {'units': 'lbs', 'digits': 0},
+        'airquality': {'units': 'lbs/year', 'digits': 0}
     }
 }
 
